@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="banner-left">
+
+
+        </div>
+    </div>
+</div><!-- /advertisement -->
+<div class="row">
+    <div class="col-sm-3 col-left">
+
+
+    </div><!-- /.col-left -->
+    <div class="col-sm-9 col-right">
+        <div class="col-sm-6">
+            <h4>Thông tin khách hàng</h4>
+            <div class="line2 mtb20"></div>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    <label class="control-label">Họ tên khách hàng *</label>
+                    <input type="text" name="HotenKH" class="form-control">
+                    @ViewData["Loi1"]
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Tên đăng nhập *</label>
+                    <input type="text" name="TenDN" class="form-control">
+                    @ViewData["Loi2"]
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Mật khẩu *</label>
+                    <input type="password" name="Matkhau" class="form-control">
+                    @ViewData["Loi3"]
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Mật khẩu nhập lại *</label>
+                    <input type="password" name="Matkhaunhaplai" class="form-control">
+                    @ViewData["Loi4"]
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Điện thoại *</label>
+                    <input type="text" name="Dienthoai" class="form-control">
+                    @ViewData["Loi5"]
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Email *</label>
+                    <input type="text" name="Email" class="form-control">
+                    @ViewData["Loi7"]
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Ngày sinh *</label>
+                    <input type="date" name="Ngaysinh" class="form-control">
+                    @ViewData["Loi6"]
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Địa chỉ *</label>
+                    <input type="text" name="Diachi" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger btn-md btn-login fwb">ĐĂNG KÝ </button>
+                </div>
+            }
+        </div>
+        </div>
+    </div>
+

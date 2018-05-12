@@ -1,0 +1,149 @@
+﻿@using BookStore.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<BookStore.Models.SACH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <div class="flexslider ma-nivoslider">
+                <div class="ma-loading"></div>
+                <div id="ma-inivoslider-banner7" class="slides">
+                    <img src="~/images/firstnew-915.jpg" class="dn" alt="" title="#banner7-caption1" />
+                    <img src="~/images/phucminh-915.jpg" class="dn" alt="" title="#banner7-caption2" />
+                    <img src="~/images/bachviet-915.jpg" class="dn" alt="" title="#banner7-caption2" />
+
+                </div>
+
+            </div><!-- /.flexslider -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="banner-left">
+                <a href="#"><img src="" alt=""></a>
+                <div class="banner-content">
+                    <h1>sale up to</h1>
+                    <h2>20% off</h2>
+                    <p>on selected products</p>
+                    <a href="#">buy now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="banner banner-double"><a href="#"><img alt="" src="~/img/qc1.jpg" style="height:270px; width:800px"></a></div>
+            @*<div class="banner banner-double"><a href="#"><img alt="" src="~/images/ads/ads-03.jpg"></a></div>*@
+        </div>
+        <div class="col-sm-4">
+            <div class="banner"><a href="#"><img alt="" src="~/img/qc2.png" style="height:270px"></a></div>
+        </div>
+    </div><!-- /advertisement -->
+    <div class="row">
+        <div class="col-sm-3 col-left">
+            <div class="timely">
+                <div class="title-group"><h2>Nên Xem</h2></div>
+                <div id="timely-owl" class="owl-container">
+                    <div class="owl">
+                        @foreach (var Sxem in Model)
+                        {
+                            <div class='timer-item item'>
+                                <div class="item-inner">
+                                    <div class="images-container">
+                                        <a href="@Url.Action("Details", "BookStore", new { id = Sxem.Masach})" title="Fusce aliquam" class="product-image">
+                                            <img src="~/img/@Sxem.Hinhminhhoa" alt="Fusce aliquam" />
+                                        </a>
+                                    </div>
+                                    <div class="content-box">
+                                        <h2 class="product-name"><a href="#" title="Fusce aliquam"></a>@Sxem.Tensach</h2>
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span class="price-label">Special Price</span>
+                                                <span class="price">@Sxem.Dongia</span>
+                                            </p>
+                                        </div>
+                                        <div class="ratings">
+                                            <div class="rating-box">
+                                                <div class="rating" style="width:67%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div><!-- /.timely -->
+        </div><!-- /.col-left -->
+        <div class="col-sm-9 col-right">
+            <div class="featuredproductslider-container">
+                <h3>Đỗ Thị Thúy Na - 15dh110045 </h3>
+                <div class="title-group1"><h2>SÁCH MỚI</h2></div>
+                <div>
+                    @foreach (var sach in Model)
+                    {
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <a href="@Url.Action("Details", "BookStore", new { id = sach.Masach})">
+                                    <img alt="@sach.Tensach" src="~/img/@sach.Hinhminhhoa" width="120" />
+                                    <div>
+
+                                        <h5 style="text-align:center">
+                                            @Truncate(sach.Tensach, 30)
+                                        </h5>
+                                        <p></p>
+                                    </div>
+                                </a>
+                                <div class="rating">
+                                    <p class="pull-right">15 review</p>
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star">
+                                        </span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    } <br />
+                </div>
+            </div><!-- /.featuredproductslider-container -->
+            <br />
+            <div style="margin-top:560px">
+                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+
+                <div class="MenuTrang">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+                </div>
+                <style>
+                    .MenuTrang li {
+                        display: inline;
+                    }
+                </style>
+
+            </div>
+
+        </div>
+
+    </div><!-- /.col-right -->
+</div>
+
+

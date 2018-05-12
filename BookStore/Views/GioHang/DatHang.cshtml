@@ -1,0 +1,111 @@
+﻿@using BookStore.Models
+@model List<Giohang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="breadcrumbs">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="#">Trang Chủ</a></li>
+            <li class="active">Giỏ Hàng</li>
+        </ul>
+    </div>
+</div>
+<div class="main">
+    <div class="container">
+        <div class="cart">
+            
+                <div class="table-responsive">
+                    <table class="table custom-table">
+                        <thead>
+                            <tr class="first last">
+                                <th>Xóa</th>
+                                <th>Hình</th>
+                                <th>Tên Sản Phẳm</th>
+                                <th>Cập nhật</th>
+                                <th>Số Lượng</th>
+                                <th>Giá Bán</th>
+                                <th>Tổng Cộng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-center"><a class="btn-remove" href="@Url.Action("XoaGiohang","GioHang",new { @Masach=item.iMaSach})"><span class="fa fa-trash-o"></span></a></td>
+                                    <td>
+                                        <a class="product-image" title="Primis in faucibus" href="#">
+                                            <img src="~/img/@item.sHinhminhhoa" width="120" />
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#">@item.sTenSach</a>
+
+                                    </td>
+                                    <td class="text-center"><a href="#">Edit</a></td>
+                                    <td class="qty">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button class="btn" type="button">-</button>
+                                            </span>
+                                            <input type="text" class="form-control" value="@item.iSoLuong">
+                                            <span class="input-group-btn">
+                                                <button class="btn" type="button">+</button>
+                                            </span>
+                                        </div><!-- /input-group -->
+                                    </td>
+                                    <td class="subtotal">@item.dDongia</td>
+                                    <td class="grandtotal">@item.iThanhTien</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <a href="@Url.Action("Index","Bookstore")" class="btn btn-default btn-md">Tiếp Tục Mua Hàng</a>
+                    <button type="submit" class="btn btn-danger btn-md">Làm Mới</button>
+                </div>
+                <div class="line2"></div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        @{
+                            KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+                        }
+                        <h4>Thông Tin Khách Hàng</h4>
+                        <p class="text-muted"></p>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary(true)
+                            <div class="form-group">
+                                <label class="control-label">Họ Tên Khách Hàng</label>
+                                <input type="text" class="form-control" value="@kh.HoTenKH">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Địa Chỉ</label>
+                                <input type="text" class="form-control" value="@kh.DiachiKH">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">SDT</label>
+                                <input type="text" class="form-control" value="@kh.DienthoaiKH">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Ngày Đặt Hàng</label>
+                                <input type="text" class="form-control" value="@DateTime.Now.ToShortDateString()">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Ngày Giao Hàng</label>
+                                <input type="date" class="form-control" name="Ngaygiao">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-default btn-md">Xác Nhận</button>
+                            </div>
+                        }
+                    </div>
+                    
+                </div>
+            
+        </div>
+    </div>
+</div>

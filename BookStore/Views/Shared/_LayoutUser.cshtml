@@ -1,0 +1,387 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="#">
+
+    <link rel="shortcut icon" href="~/images/icon.png">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/nivo-slider.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet">
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="header">
+        <div class="topbar">
+            <div class="container2">
+                <a href="#"><img src="~/images/12.12-1263-ffec63.jpg" style="width:1345px;" /></a>
+            </div>
+            <div class="container">
+
+                <div class="topbar-left">
+                    <ul class="topbar-nav clearfix">
+                        <li><span class="phone">0(123) 456 789</span></li>
+                        <li><span class="email">info@fahasa.com</span></li>
+                    </ul>
+                </div>
+                <div class="topbar-right">
+                    
+                    <ul class="topbar-nav clearfix">
+                        <li>@Html.ActionLink("Login","Dangnhap", "Nguoidung")</li>
+                        <li class="dropdown">
+                            <a href="" class="account" data-toggle="dropdown">@Html.Action("Xinchao", "Nguoidung")</a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a title="My Account" href="account.html">@Html.ActionLink("Logout","Logout", "Nguoidung")</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="currency dropdown-toggle" data-toggle="dropdown">USD</a>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="language dropdown-toggle" data-toggle="dropdown"><img src="~/images/flag-us.png" alt=""> English</a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#"><img src="~/images/flag-us.png" alt=""> &nbsp;English</a></li>
+                                <li><a href="#"><img src="~/images/flag-spain.png" alt=""> &nbsp;Spanish</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.container -->
+        </div><!-- /.topbar -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="index.html" class="logo"><img src="~/images/smartbook-01.png" alt=""></a>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="support-client">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="box-container time">
+                                        <div class="box-inner">
+                                            <h2>Mở cửa</h2>
+                                            <p>Thứ 2 - Chủ Nhật: 8.00 - 20.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="box-container free-shipping">
+                                        <div class="box-inner">
+                                            <h2>Free shipping</h2>
+                                            <p>Hóa đơn trên 99k</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="box-container money-back">
+                                        <div class="box-inner">
+                                            <h2>Hoàn Tiền 100%</h2>
+                                            <p>Trong vòng 10 ngày sau khi giao hàng</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.support-client -->
+                        <form class="form-search">
+                            <input type="text" class="input-text" name="q" id="search" placeholder =" Tìm kiếm...">
+                            <div class="dropdown">
+                                <button type="button" class="btn" data-toggle="dropdown">Tất cả<span class="fa fa-angle-down"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#">Computer</a></li>
+                                    <li><a href="#">Camera</a></li>
+                                    <li><a href="#">Smart Phone</a></li>
+                                    <li><a href="#">Electronic</a></li>
+                                </ul>
+                            </div>
+                            <button type="submit" class="btn btn-danger"><span class="fa fa-search"></span></button>
+                        </form>
+                        @Html.Action("GiohangPartial","GioHang")
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="mega-container visible-lg visible-md">
+                            <div class="navleft-container">
+                                <div class="mega-menu-title"><h3>Danh Mục</h3></div>
+                                <div class="mega-menu-category" style="display:none">
+                                    <ul class="nav">
+                                        @Html.Action("Chude", "Bookstore")
+                                        <li>
+                                            <a href="#"> Nhà xuất bản </a>
+                                            @Html.Action("Nhaxuatban", "Bookstore")
+                                        </li>
+                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <ul class="menu clearfix visible-lg visible-md">
+                            <li>@Html.ActionLink("Trang chủ","Index","Bookstore")</li>
+                            <li><a href="list.html">Đề Xuất</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.header-bottom -->
+    </div><!-- /.header -->
+
+    <div class="main">
+        
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+    
+
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 hidden-sm hidden-xs">
+                        <div class="subscribe">
+                            <div class="subscribe-inner">
+                                <h3> ĐăngKý Nhận Thông Báo</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-8">
+                        <form method="post" class="form-inline form-subscribe">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="newsletter" name="email" placeholder="Email ...">
+                            </div>
+                            <button class="btn btn-danger" title="Subscribe" type="submit" >@Html.ActionLink("Đăng ký","Dangky","Nguoidung")</button>
+                        </form>
+                    </div>
+                    <div class="col-md-3 col-sm-4">
+                        <ul class="social">
+                            <li><a href="#" class="face">face</a></li>
+                            <li><a href="#" class="google">google</a></li>
+                            <li><a href="#" class="twitter">twitter</a></li>
+                            <li><a href="#" class="youtube">youtube</a></li>
+                            <li><a href="#" class="linkedin">linkedin</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.footer-top -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="copy">Copyright &copy; 2015 Plazathemes. All Rights Reserved</div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="payment"><img src="~/images/payment.png" alt="" class="img-responsive"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.footer -->
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.nivo.slider.pack.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script type="text/javascript">
+        /* Main Slideshow */
+        $(window).load(function () {
+            $(document).off('mouseenter').on('mouseenter', '.pos-slideshow', function (e) {
+                $('.ma-banner7-container .timethai').addClass('pos_hover');
+            });
+            $(document).off('mouseleave').on('mouseleave', '.pos-slideshow', function (e) {
+                $('.ma-banner7-container .timethai').removeClass('pos_hover');
+            });
+        });
+        $(window).load(function () {
+            $('#ma-inivoslider-banner7').nivoSlider({
+                effect: 'random',
+                slices: 15,
+                boxCols: 8,
+                boxRows: 4,
+                animSpeed: 1000,
+                pauseTime: 6000,
+                startSlide: 0,
+                controlNav: false,
+                controlNavThumbs: false,
+                pauseOnHover: true,
+                manualAdvance: false,
+                prevText: 'Prev',
+                nextText: 'Next',
+                afterLoad: function () {
+                },
+                beforeChange: function () {
+                },
+                afterChange: function () {
+                }
+            });
+        });
+        $(document).ready(function () {
+            /* timely-owl */
+            $("#timely-owl .owl").owlCarousel({
+                autoPlay: false,
+                items: 1,
+                itemsDesktop: [1199, 1],
+                itemsDesktopSmall: [991, 1],
+                itemsTablet: [767, 2],
+                itemsMobile: [480, 1],
+                slideSpeed: 1000,
+                paginationSpeed: 1000,
+                rewindSpeed: 1000,
+                navigation: true,
+                stopOnHover: true,
+                pagination: false,
+                scrollPerPage: true,
+            });
+            /* special-offer slider */
+            $("#special-offer .owl").owlCarousel({
+                autoPlay: false,
+                items: 1,
+                itemsDesktop: [1199, 1],
+                itemsDesktopSmall: [991, 1],
+                itemsTablet: [767, 2],
+                itemsMobile: [480, 1],
+                slideSpeed: 3000,
+                paginationSpeed: 3000,
+                rewindSpeed: 3000,
+                navigation: true,
+                stopOnHover: true,
+                pagination: false,
+                scrollPerPage: true,
+            });
+            /* latest-news slider */
+            $("#latest-news .owl").owlCarousel({
+                autoPlay: false,
+                items: 1,
+                itemsDesktop: [1199, 1],
+                itemsDesktopSmall: [991, 1],
+                itemsTablet: [767, 2],
+                itemsMobile: [480, 1],
+                slideSpeed: 1000,
+                paginationSpeed: 1000,
+                rewindSpeed: 1000,
+                navigation: true,
+                stopOnHover: true,
+                pagination: false,
+                scrollPerPage: true,
+            });
+            /* clients-say slider */
+            $("#clients-say .owl").owlCarousel({
+                autoPlay: false,
+                items: 1,
+                itemsDesktop: [1199, 1],
+                itemsDesktopSmall: [991, 1],
+                itemsTablet: [767, 2],
+                itemsMobile: [480, 1],
+                slideSpeed: 3000,
+                paginationSpeed: 3000,
+                rewindSpeed: 3000,
+                navigation: true,
+                stopOnHover: true,
+                pagination: false,
+                scrollPerPage: true,
+            });
+            /* featured-products slider */
+            $("#featured-products .owl").owlCarousel({
+                autoPlay: false,
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [991, 2],
+                itemsTablet: [767, 2],
+                itemsMobile: [480, 1],
+                slideSpeed: 3000,
+                paginationSpeed: 3000,
+                rewindSpeed: 3000,
+                navigation: true,
+                stopOnHover: true,
+                pagination: false,
+                scrollPerPage: true,
+            });
+            /* new-products slider */
+            $("#new-products .owl").owlCarousel({
+                autoPlay: false,
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [991, 2],
+                itemsTablet: [767, 2],
+                itemsMobile: [480, 1],
+                slideSpeed: 3000,
+                paginationSpeed: 3000,
+                rewindSpeed: 3000,
+                navigation: true,
+                stopOnHover: true,
+                pagination: false,
+                scrollPerPage: true,
+            });
+        });
+    </script>
+
+    <!-- Hot Deals Timer 1-->
+    <script type="text/javascript">
+        var dthen1 = new Date("12/25/33 11:59:00 PM");
+        start = "08/04/15 03:02:11 AM";
+        start_date = Date.parse(start);
+        var dnow1 = new Date(start_date);
+        if (CountStepper > 0)
+            ddiff = new Date((dnow1) - (dthen1));
+        else
+            ddiff = new Date((dthen1) - (dnow1));
+        gsecs1 = Math.floor(ddiff.valueOf() / 1000);
+
+        var iid1 = "countbox_1";
+        CountBack_slider(gsecs1, "countbox_1", 1);
+    </script>
+    <!-- Hot Deals Timer 2-->
+    <script type="text/javascript">
+        var dthen2 = new Date("05/21/26 11:59:00 PM");
+        start = "08/04/15 03:02:11 AM";
+        start_date = Date.parse(start);
+        var dnow2 = new Date(start_date);
+        if (CountStepper > 0)
+            ddiff = new Date((dnow2) - (dthen2));
+        else
+            ddiff = new Date((dthen2) - (dnow2));
+        gsecs2 = Math.floor(ddiff.valueOf() / 1000);
+
+        var iid2 = "countbox_2";
+        CountBack_slider(gsecs2, "countbox_2", 2);
+    </script>
+    <!-- Hot Deals Timer 3-->
+    <script type="text/javascript">
+        var dthen3 = new Date("05/21/33 11:59:00 PM");
+        start = "08/04/15 03:02:11 AM";
+        start_date = Date.parse(start);
+        var dnow3 = new Date(start_date);
+        if (CountStepper > 0)
+            ddiff = new Date((dnow3) - (dthen3));
+        else
+            ddiff = new Date((dthen3) - (dnow3));
+        gsecs3 = Math.floor(ddiff.valueOf() / 1000);
+
+        var iid3 = "countbox_3";
+        CountBack_slider(gsecs3, "countbox_3", 3);
+    </script>
+
+</body>
+</html>

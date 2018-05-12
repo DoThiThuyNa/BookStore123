@@ -1,0 +1,75 @@
+#SanPham{
+	width:1200px;
+	height:500px;
+	margin:auto;
+	margin-top:30px;
+	background:#FFFFFF;
+
+}
+#logo1{
+	width:1200px;
+	height:200px;
+	margin:auto;
+	margin-top:5px;
+}
+
+#up{
+	height:40px;
+	border:1px solid #999999;
+	background:#FFFFFF;
+}
+#left{
+	margin-left: 5px;
+	margin-top:10px;
+	color:#FF9900;
+	text-transform:uppercase;
+	background:#FFFFFF;
+}
+#right{
+	float:right;
+	margin-right:5px;
+	margin-top:-16px;
+	background:#FFFFFF;
+}
+#right li{
+	float:left;
+	margin-left:15px;
+	color:#999999;
+	list-style-type:none;
+	background:#FFFFFF;
+}
+#right li:hover{
+	color:#FF0000;
+}
+#boxes{
+  margin-top:20px;
+  background:#FFFFFF;
+}
+
+#boxes .box{
+  float:left;
+  text-align: center;
+  height:400px;
+  padding:10px;
+  background:#FFFFFF;
+
+}
+
+#boxes .box img{
+  width:180px;
+  height:240px;
+  background:#FFFFFF;
+}
+#mua{
+	height:35px;
+	width:176px;
+	background:#FFFFFF;
+}
+p{
+background:#FFFFFF;
+}
+img{-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;-ms-transition:all 1s ease;transition:all 1s ease;max-width:100%}
+#boxes .box img:hover{
+	-webkit-transform:scale(0.25);-moz-transform:scale(0.25);-ms-transform:scale(0.25);-o-transform:scale(0.25);transform:scale(0.25)
+}
+img{max-width:100%;overflow:auto}

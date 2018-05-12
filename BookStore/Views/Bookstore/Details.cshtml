@@ -1,0 +1,102 @@
+﻿
+<style type="text/css">
+    #Datmua a{
+        clear:both; background-color:red;
+        color:white; width:120px; height:35px;
+        display:block; float:right; text-align:center;
+        padding-top:10px; text-decoration:none; font-weight:bold;
+    }
+    #Datmua a:hover{
+        background-color:gray;
+        color: red;
+    }
+</style>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<div class="breadcrumbs">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="#">Trang Chu</a></li>
+            <li class="active">Chi Tiet San Pham</li>
+        </ul>
+    </div>
+</div><!-- /.breadcrumbs -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-right">
+            <div class="product-view">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="product-img-box">
+                            <p class="product-image">
+                                <a href="images/products/1.jpg" class="cloud-zoom" id="ma-zoom1">
+                                    <img src="~/img/@Model.Hinhminhhoa" alt="Fusce aliquam" title="Fusce aliquam" />
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-shop col-sm-7">
+                        <div class="product-name">
+                            <h1>@Model.Tensach</h1>
+                        </div>
+                        <div class="ratings">
+                            <div class="rating-box">
+                                <div style="width:67%" class="rating"></div>
+                            </div>
+                            <span class="amount"><a href="#">1 Review(s)</a></span>
+                        </div>
+                        <div class="box-container2">
+                            <div class="price-box">
+                                <p class="special-price">
+                                    <span class="price-label">Special Price</span>
+                                    <span id="product-price-1" class="price">@Model.Dongia</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="short-description">
+                            <div class="std">@Model.Mota</div>
+                        </div>
+                        <form class="form-horizontal">                        
+                            <div class="rating">
+                                <p class="pull-right">15 review</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star">
+                                    </span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                            <a type="submit" class="btn btn-danger btn-cart" href="@Url.Action("ThemGiohang","GioHang",new {@Masach = @Model.Masach, @strUrl= Request.Url.ToString()})">Add to cart</a>
+                        </form>
+                    </div><!-- /.product-shop -->
+                </div>
+            </div><!-- /.product-view -->
+        </div><!-- /.col-right -->
+        <div class="col-sm-3 col-left">
+            <div class="block">
+                <div class="title-group"><h2>Sach moi</h2></div>
+                <div id="special-offer" class="owl-container">
+                    <div class="owl">
+                        <div class='sepecialoffer-item item'>
+                            
+                        </div>
+                    </div>
+                </div><!-- /.owl-container -->
+            </div><!-- /.block - Special offer -->
+            <div class="block block-list">
+                <div class="block-title">
+                    <strong><span>Compare</span></strong>
+                </div>
+                <div class="block-content">
+                    <p class="empty">You have no items to compare.</p>
+                </div>
+            </div><!-- /.compare -->
+        </div><!-- /.col-left -->
+    </div>
+</div>
+
+
